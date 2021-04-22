@@ -1,0 +1,305 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+body {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    /* background-color: rgba(0, 0, 0, 0.85); */
+    background-color: rgba(0, 0, 0, 0.9);
+    background-repeat: no-repeat;
+}
+/* ------------------------------------- */
+/* CABECERA DE LA PÁGINA  */
+/* ----------------------------- */
+header {
+    user-select: none;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(141, 132, 132);
+    font-family: monospace;
+    position: fixed;
+    width: 100%;
+    min-width: 320px;
+    height: 50px;
+    padding: 0px 0px;
+    box-sizing: content-box;
+    z-index: 100;
+}
+
+/* ----- Desing del menu para movil ----- */
+header .logo {
+    height: 100%;
+    font-size: 30px;
+    letter-spacing: 5px;
+    padding:0px  15px;
+}
+header .logo p {
+    display: inline;
+    line-height: 50px;
+}
+header .container_btn-menu {
+    display: block;
+    padding-right: 9px;
+}
+header .container_btn-menu> button {
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    color: #fff;
+    background-color: #000;
+    font-size: 25px;
+    outline: none;
+    border: none;
+}
+header .container_btn-menu> button:hover {
+    color: #ccc;
+}
+/* diseño del contenido del menú  */
+header .container-menu {
+    position: absolute;
+    top: 51px;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+    background-color: #000a;
+}
+header .container-menu .menu {
+    position: absolute;
+    right: 0px;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding-left: 0px;
+    background-color: #000;
+}
+header .container-menu .menu li {
+    text-align: center;
+    list-style: none;
+    font-size: 18px;
+    line-height: 50px;
+}
+header .container-menu .menu li:hover {
+    background: linear-gradient(135deg , #2227 30%, #7777) ;
+    background-repeat: no-repeat;
+}
+header .container-menu .menu li > a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 0px 15px;
+}
+/* ------------------------------ */
+/* CUERPO DE LA PÁGINA WEB*/
+/* ---------------------------------- */
+
+/* ------ Redes sociales ------- */
+.redes-sociales {
+    position: relative;
+    z-index: 110;
+    
+}
+section .btn-RS {
+    position: fixed;
+    display: block;
+    width: 50px;
+    height: 50px;
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 45px;
+    border-radius: 50%;
+    z-index: 15;
+    background-color: rgb(136, 111, 216);
+    color: rgb(0, 0, 0);
+    z-index: 18;
+    transition: transform .2s ease-in;
+    cursor: pointer;
+}
+
+section .btn-RS > div {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+}
+section .contenido-RS{
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0px 0px 50px #000 inset;
+    /* background-color: rgb(196, 185, 255); */
+    background: radial-gradient(circle, rgb(196, 185, 255), rgb(136, 111, 216) );
+    border-radius: 50%;    
+    bottom: -60px;
+    right: -60px;
+    color: rgb(0, 0, 0);
+    z-index: 15;
+    transform: scale(0) rotate(-70deg);
+    transition: transform .2s ease-in;
+}
+section .contenido-RS > div {
+    position: absolute;
+    display: block;
+    font-size: 28px;
+    height: 28px;
+    width: 24.5px;
+}
+section .contenido-RS > div > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 28px;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+}
+section .contenido-RS > .facebook {
+    top: 20px;
+    left: 91.25px;
+}
+section .contenido-RS > .tiktok {
+    top: 86px;
+    left: 20px;
+}
+section .contenido-RS > .instagram {
+    top: 39px;
+    left: 43.375px;
+}
+section .contenido-RS > div > p {
+    display: none;
+}
+
+main {
+    user-select: none;
+    position: relative;
+    padding-top: 66px;
+    z-index: 10;
+}
+/* ------ tarjetas de Animaciones ------ */
+main .contenido {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+main .contenido > div {
+    position: relative;
+    width: 80%;
+    height: 200px;
+    border: 1px solid #fff;
+    box-shadow: 0px 0px 10px #ccc inset;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+main .contenido > div > img {
+    width: 100%;
+    height: 100%;
+    transition: all .2s linear;
+}
+main .contenido > div:hover img{
+    transform: scale(1.2) rotate(-5deg);
+}
+main .contenido > div:hover:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #0007;
+    z-index: 4;
+}
+main .contenido > div:hover button {
+    position: absolute;
+    top: calc(50% - 14px);
+    left: calc(50% - 72.33px);
+    background: linear-gradient(135deg, #000, #ccc);
+    border: none;
+    box-shadow: 1px 1px 2px #222, 1px 2px 2px #111, 2px 2px 2px #000;
+    border-radius: 10px;
+    outline: none;
+    z-index: 13;
+}
+main .contenido > div:hover button:active {
+    box-shadow: 1px 1px 2px #eee, 1px 2px 2px #ddd, 2px 2px 2px #ccc;
+    background: linear-gradient(135deg, #ccc, #000);
+}
+main .contenido > div button > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-family: monospace;
+    font-weight: bold;
+}
+main .contenido > div h3 {
+    position: absolute;
+    display: block;
+    color: #fff;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    margin: 0px;
+    padding: 10px;
+    background: linear-gradient(to top, #000 45%, transparent);
+    font-weight: bold;
+    font-family: monospace;
+}
+
+/* ----- Desing del menú para tablet ----- */
+@media only screen and (min-width: 541px) {
+    header .container-menu .menu {
+        width: 200px;
+    }
+    header .container-menu .menu li {
+        text-align: right;
+    }
+}
+
+/* ----- Desing del menú para desktop ----- */
+@media only screen and (min-width: 837.723px) {
+    header .container_btn-menu {
+        display: none;
+    }
+    header .container-menu {
+        transition: none;
+        position: relative;
+        top: 0px;
+        height: 100%;
+        width: auto;
+        right: 0px;
+        background-color: transparent;
+    }
+    header .container-menu .menu {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+    }
+    header .container-menu .menu li {
+        text-align: center;
+        min-width: 148px;
+    }
+    header .container-menu .menu li:hover {
+        background: linear-gradient(90deg, #000 15%, #5557 90%, #5559) ;
+        font-weight: bold;
+    }
+} 
+
+
+
