@@ -6,12 +6,10 @@ body {
     position: relative;
     padding: 0;
     margin: 0;
-    /* background-color: rgba(0, 0, 0, 0.85); */
-    background-color: rgba(0, 0, 0, 0.9);
-    background-repeat: no-repeat;
+    background-color: #141414;
 }
 /* ------------------------------------- */
-/* CABECERA DE LA PÁGINA  */
+/* CABECERA DE LA PÁGINA  
 /* ----------------------------- */
 header {
     user-select: none;
@@ -97,33 +95,32 @@ header .container-menu .menu li > a {
     padding: 0px 15px;
 }
 /* ------------------------------ */
-/* CUERPO DE LA PÁGINA WEB*/
+/* CUERPO DE LA PÁGINA WEB 
 /* ---------------------------------- */
 
-/* ------ Redes sociales ------- */
+/* ----------------------- Redes sociales ------------------------ */
 .redes-sociales {
-    position: relative;
+    display: inline-block;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
     z-index: 110;
-    
 }
 section .btn-RS {
-    position: fixed;
-    display: block;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;  
     width: 50px;
     height: 50px;
-    bottom: 10px;
-    right: 10px;
-    color: #fff;
     font-size: 45px;
+    border: none;
     border-radius: 50%;
-    z-index: 15;
-    background-color: rgb(136, 111, 216);
-    color: rgb(0, 0, 0);
+    background: radial-gradient(circle, rgb(150, 160, 247), rgb(44, 63, 236));
+    color: #fff;
     z-index: 18;
     transition: transform .2s ease-in;
     cursor: pointer;
 }
-
 section .btn-RS > div {
     display: block;
     width: 100%;
@@ -133,16 +130,14 @@ section .btn-RS > div {
     font-weight: bold;
 }
 section .contenido-RS{
-    position: fixed;
+    position: absolute;
     width: 200px;
     height: 200px;
     box-shadow: 0px 0px 50px #000 inset;
-    /* background-color: rgb(196, 185, 255); */
-    background: radial-gradient(circle, rgb(196, 185, 255), rgb(136, 111, 216) );
+    background: linear-gradient(135deg, rgb(51, 51, 255,.7),rgb(255, 255, 255,.5));
     border-radius: 50%;    
     bottom: -60px;
-    right: -60px;
-    color: rgb(0, 0, 0);
+    right: -60px; 
     z-index: 15;
     transform: scale(0) rotate(-70deg);
     transition: transform .2s ease-in;
@@ -160,9 +155,10 @@ section .contenido-RS > div > a {
     height: 100%;
     line-height: 28px;
     text-align: center;
-    color: #000;
+    color: #fff;
     text-decoration: none;
 }
+/* Inicio- posicionando los iconos de las RS */
 section .contenido-RS > .facebook {
     top: 20px;
     left: 91.25px;
@@ -178,14 +174,14 @@ section .contenido-RS > .instagram {
 section .contenido-RS > div > p {
     display: none;
 }
-
+/* Fin- posicionando los íconos de las redes sociales */
 main {
     user-select: none;
     position: relative;
     padding-top: 66px;
     z-index: 10;
 }
-/* ------ tarjetas de Animaciones ------ */
+/* ----------------------- Tarjetas de Animaciones ---------------------------- */
 main .contenido {
     position: relative;
     width: 100%;
@@ -193,58 +189,57 @@ main .contenido {
     flex-wrap: wrap;
     justify-content: center;
 }
+/* container de cada tarjeta de animación */
 main .contenido > div {
     position: relative;
-    width: 80%;
+    width: 90%;
     height: 200px;
-    border: 1px solid #fff;
-    box-shadow: 0px 0px 10px #ccc inset;
     margin-bottom: 15px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
+/* Imagen - previsualización de la animación */
 main .contenido > div > img {
     width: 100%;
     height: 100%;
-    transition: all .2s linear;
 }
-main .contenido > div:hover img{
-    transform: scale(1.2) rotate(-5deg);
-}
-main .contenido > div:hover:after {
-    content: "";
+/* Inicio - boton para ir a la animación */
+main .contenido > div > .ver-animacion {
     position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background-color: #0007;
-    z-index: 4;
-}
-main .contenido > div:hover button {
-    position: absolute;
-    top: calc(50% - 14px);
-    left: calc(50% - 72.33px);
-    background: linear-gradient(135deg, #000, #ccc);
+    background: linear-gradient(135deg, #000d, #ccc7);
     border: none;
-    box-shadow: 1px 1px 2px #222, 1px 2px 2px #111, 2px 2px 2px #000;
-    border-radius: 10px;
     outline: none;
-    z-index: 13;
-}
-main .contenido > div:hover button:active {
-    box-shadow: 1px 1px 2px #eee, 1px 2px 2px #ddd, 2px 2px 2px #ccc;
-    background: linear-gradient(135deg, #ccc, #000);
-}
-main .contenido > div button > a {
-    display: block;
+    z-index: 7;
+    transform: scale(0);
+    transition: transform .2s linear;
     width: 100%;
     height: 100%;
-    text-decoration: none;
+    padding: 0;
+    text-align: center;
+}
+main .contenido > div:hover .ver-animacion {
+    transform: scale(1);
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-top: 1px solid #fff;
+}
+main .contenido > div .ver-animacion > a {
     color: #fff;
-    font-size: 18px;
+    font-size: 27px;
     font-family: monospace;
     font-weight: bold;
+    line-height: 200px;
+    text-decoration: none;
 }
+main .contenido > div .ver-animacion > a:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 3px 2px #000;
+}
+main .contenido > div .ver-animacion > a:active {
+    color: #ccc;
+} 
+/* Nombre de la animación */
 main .contenido > div h3 {
     position: absolute;
     display: block;
@@ -254,10 +249,24 @@ main .contenido > div h3 {
     width: 100%;
     margin: 0px;
     padding: 10px;
-    background: linear-gradient(to top, #000 45%, transparent);
+    background: linear-gradient(to top, #000 , transparent);
     font-weight: bold;
     font-family: monospace;
 }
+/* Descripción de la animación */
+.footer {
+    position: relative;
+    z-index: 14;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+    width: 100%;
+    height: 100px;
+}
+/* ---------------------------------------------------------------- */
+/*  PIE DE PÁGINA
+/* ---------------------------------------------------------------- */
 
 /* ----- Desing del menú para tablet ----- */
 @media only screen and (min-width: 541px) {
